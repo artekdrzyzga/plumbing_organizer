@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Plumbing Organizer – Admin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="<%= admin_root_path %>">PlumbingOrganizer::Admin</a>
+      </div>
+        <ul class="nav navbar-nav">
+          <li <% if params[:controller] == "admin/products" %>class="active"<% end %>><%= link_to "Products", admin_products_path %></li>
+          <li <% if params[:controller] == "admin/categories" %>class="active"<% end %>><%= link_to "Categories", admin_categories_path %></li>
+        
+        </ul>
+    </div>
+  </nav>
+  <div class="container-fluid">
+    <%= bootstrap_flash %>
+    <%= yield %>
+  </div>
+</body>
+</html>
