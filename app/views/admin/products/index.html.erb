@@ -1,7 +1,7 @@
 <h1>Produkty</h1>
 
 <%= link_to new_admin_product_path, class: "btn btn-success" do %>
-  <span class="fa fa-plus fa-spin"></span> Dodaj nowy produkt
+  <span class="fa fa-plus fa-spin"></span> Add new product
 <% end %>
 
 
@@ -9,18 +9,27 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th> Nazwa</th>
+      <th>Product code</th>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Location</th>
+      
       <th>Cena </th>
-      <th>Kategoria</th>
+      
       <th></th>
     </tr>
   </thead>
   <tbody>
     <% @products.each do |product| %>
       <tr>
+        <td><%= product.code %></td>
         <td><%= product.name %></td>
-        <td><%= number_to_currency product.price %></td>
         <td><%= product.category.name %></td>
+        <td><%= product.location%>
+        
+
+        <td><%= number_to_currency product.price %></td>
+        
         <td>
           <%= link_to "Edycja", edit_admin_product_path(product), class: "btn btn-default btn-xs" %>
         </td>

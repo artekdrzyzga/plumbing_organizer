@@ -37,6 +37,7 @@ class Admin::ProductsController < Admin::BaseController
       :description,
       :code,
       :price,
+      :location,
       :photo
     )
   end

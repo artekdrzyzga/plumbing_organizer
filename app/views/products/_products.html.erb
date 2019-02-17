@@ -1,0 +1,25 @@
+<% products.each_slice(3) do |slice| %>
+  <div class="row">
+    <% slice.each do |product| %>
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <h5><%= link_to product.name, product %></h5>
+          <%= link_to product_path(product) do %>
+           
+          <% end %>
+          <div class="caption">
+            
+            <p><%= simple_format(truncate(product.description, length: 90)) %></p>
+            <p class="lead"><%= number_to_currency product.price %></p>
+            <p>
+                 <%= link_to "#", method: :post, class: "btn btn-primary" do %>
+                <span class="fa fa-shopping-cart"> Add to order
+              <% end %>
+
+            </p>
+          </div>
+          </div>
+        </div>
+    <% end %>
+  </div>
+<% end %>
