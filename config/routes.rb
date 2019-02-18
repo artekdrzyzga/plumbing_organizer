@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
  
+  get 'categories/show'
   namespace :admin do
     root to: 'products#index'
     resources :products

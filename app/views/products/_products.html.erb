@@ -4,9 +4,16 @@
       <div class="col-md-4">
         <div class="thumbnail">
           <h5><%= link_to product.name, product %></h5>
-          <%= link_to product_path(product) do %>
-           
-          <% end %>
+         
+
+             <% if product.photo.url().present? %>
+               <%= image_tag product.photo.url(:thumb), class: "img-responsive center-block" %>
+            <% else %>
+              <%= image_tag "no-image.jpg", class: "img-responsive" %>
+           <%end%>
+
+
+
           <div class="caption">
             
             <p><%= simple_format(truncate(product.description, length: 90)) %></p>

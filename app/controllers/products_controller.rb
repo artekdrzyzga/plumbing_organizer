@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all
+    @products = Product.order(created_at: :desc).limit(6)
   end
 
   def show
