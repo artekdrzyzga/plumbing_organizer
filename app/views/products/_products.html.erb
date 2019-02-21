@@ -15,7 +15,7 @@
 
 
           <div class="caption">
-            
+            <p><%= product.code%></p>
             <p><%= simple_format(truncate(product.description, length: 90)) %></p>
             <p class="lead"><%= number_to_currency product.price %></p>
             <p>

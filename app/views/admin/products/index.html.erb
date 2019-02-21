@@ -4,6 +4,14 @@
   <span class="fa fa-plus fa-spin"></span> Add new product
 <% end %>
 
+<div class="search-form">
+  <%= search_form_for [:admin, @q] do |f| %>
+    <%= f.text_field :name_or_description_or_code_cont, placeholder: "Search" %>
+    <%= f.text_field :price_gt, placeholder: "Price >" %>
+    <%= f.submit "Szukaj" %>
+  <% end %>
+</div>
+
 
 
 <table class="table table-striped">

@@ -17,8 +17,19 @@ class Admin::CategoriesController < Admin::BaseController
 
 
   def edit
+    @category = Category.find(params[:id])
   end
 
+  def update
+    @category = Category.find(params[:id])
+    if @category.update_attributes(category_params)
+      redirect_to admin_categories_path, notice: "Pomyślnie zmieniono kategorię"
+    else
+      render action: :edit
+    end
+  end
+
+  
   private
 
   def category_params
