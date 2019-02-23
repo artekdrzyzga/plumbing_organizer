@@ -6,8 +6,10 @@
 
 <div class="search-form">
   <%= search_form_for [:admin, @q] do |f| %>
-    <%= f.text_field :name_or_description_or_code_cont, placeholder: "Search" %>
-    <%= f.text_field :price_gt, placeholder: "Price >" %>
+    <%= f.text_field :code_cont, placeholder: "Product code" %>
+    <%= f.text_field :name_cont, placeholder: "Name" %>
+
+    <%= f.text_field :location_cont, placeholder: "Location" %>
     <%= f.submit "Szukaj" %>
   <% end %>
 </div>
