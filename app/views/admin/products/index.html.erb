@@ -1,4 +1,4 @@
-<h1>Produkty</h1>
+<h1>Products</h1>
 
 <%= link_to new_admin_product_path, class: "btn btn-success" do %>
   <span class="fa fa-plus fa-spin"></span> Add new product
@@ -10,7 +10,7 @@
     <%= f.text_field :name_cont, placeholder: "Name" %>
 
     <%= f.text_field :location_cont, placeholder: "Location" %>
-    <%= f.submit "Szukaj" %>
+    <%= f.submit "Search" %>
   <% end %>
 </div>
 
@@ -19,10 +19,10 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Product code</th>
-      <th>Name</th>
+      <th><%= sort_link(@q, :code, "Product code")%></th>
+      <th><%= sort_link(@q, :name, "Name")%></th>
       <th>Category</th>
-      <th>Location</th>
+      <th><%= sort_link(@q, :location,"Location")%></th>
       
       <th>Cena </th>
       
